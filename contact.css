@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none; 
+}
+
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  padding-left: 40px;
+  font-size: 3em;
+  color: yellow;
+  text-decoration: none;
+  user-select: none;
+  margin-right: auto;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-left: auto;
+}
+
+.navigation a {
+  font-size: 1.1em;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.button-container {
+  display: flex;
+  gap: 15px;
+}
+
+.login-button, .signup-button {
+  padding: 8px 16px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: yellow;
+  color: rgb(0, 0, 0);
+  transition: background-color 0.2s ease;
+}
+
+.login-button:hover, .signup-button:hover {
+  background-color: #86a814;
+}
+
+
+.navigation a:hover::after {
+  transform: scaleX(1);
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px 60px 30px 40px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  position: absolute;
+  margin-bottom: -100px;
+  margin-left: 80px;
+}
+
+.container .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.container .content .left-side {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  position: relative;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.content .left-side::before {
+  content: "";
+  position: absolute;
+  height: 70%;
+  width: 2px;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #000000;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.content .left-side .details {
+  margin: 14px;
+  text-align: center;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.content .left-side .details ion-icon {
+  font-size: 30px;
+  color: black;
+  margin-bottom: 10px;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.content .left-side .details .topic {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.content .left-side .details .text-one,
+.content .left-side .details .text-two {
+  font-size: 14px;
+  color: #afafb6;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.container .content .right-side {
+  width: 75%;
+  margin-left: 75px;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.content .right-side .topic-text {
+  font-size: 23px;
+  font-weight: 600;
+  color: blue;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.right-side .input-box {
+  height: 55px;
+  width: 100%;
+  margin: 12px 0;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.right-side .input-box input,
+.right-side .input-box textarea {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #f0f1f8;
+  border-radius: 6px;
+  padding: 0 15px;
+  resize: none;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.right-side .message-box {
+  min-height: 110px;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.right-side .input-box textarea {
+  padding-top: 6px;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.right-side .button {
+  display: inline-block;
+  margin-top: 12px;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.right-side .button input[type="button"] {
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: blue;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.button input[type="button"]:hover {
+  background: yellow;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+footer{
+  position: relative;
+  bottom: -700px;
+  background: black;
+  width: 100%;
+  
+  left: 0;
+
+
+}
+footer::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100px;
+  height: 1px;
+  width: 100%;
+  background: #AFAFB6;
+}
+footer .content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 30px 40px 40px 40px;
+}
+footer .content .top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.content .top .logo-details{
+  color: #fff;
+  font-size: 30px;
+}
+
+footer .content .link-boxes{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+footer .content .link-boxes .box{
+  width: calc(100% / 5 - 10px);
+}
+.content .link-boxes .box .link_name{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+
+.content .link-boxes .box li a{
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.4s ease
+}
+
+
+
+.link-boxes .box {
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+
+
+footer .bottom-details{
+  width: 100%;
+  background: #000000;
+}
+footer .bottom-details .bottom_text{
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-details .bottom_text span,
+.bottom-details .bottom_text a{
+  font-size: 14px;
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.8;
+  text-decoration: none;
+}
+.bottom-details .bottom_text a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+.bottom-details .bottom_text a{
+  margin-right: 10px;
+}
+
+
+
+
+
+
+ 
+

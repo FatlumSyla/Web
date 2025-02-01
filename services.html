@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Sherbimet</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #fff;
+            padding-top: 130px;
+            
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            padding-left: 40px;
+            font-size: 3em;
+            color: yellow;
+            text-decoration: none;
+            user-select: none;
+            margin-right: auto;
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-left: auto;
+        }
+
+        .navigation a {
+            font-size: 1.1em;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+        }
+
+        .login-button, .signup-button {
+            padding: 8px 16px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: yellow;
+            color: rgb(0, 0, 0);
+            transition: background-color 0.2s ease;
+        }
+
+        .login-button:hover, .signup-button:hover {
+            background-color: #86a814;
+        }
+
+        h1,
+        h3 {
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            position: relative;
+            max-width: max-content;
+            margin: 5rem auto 5rem auto;
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            width: 75%;
+            height: 5px;
+            background-color: yellow;
+            bottom: -2rem;
+            left: 25px;
+        }
+
+        i {
+            font-size: 3rem;
+            color: yellow;
+            padding: 1rem;
+            transition: all 0.3s linear;
+            transform: rotate(-45deg);
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .service-card {
+            cursor: pointer;
+            width: 300px;
+            margin: 20px;
+            padding: 2rem 20px 20px 20px;
+            text-align: center;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .icon-container {
+            border: 2px solid yellow;
+            transition: 0.3s linear;
+            width: max-content;
+            margin: 0 auto;
+            transform: rotate(45deg);
+        }
+
+        .service-card:hover {
+            box-shadow: 0 0 30px 0 yellow;
+            transform: scale(1.1);
+        }
+
+        .service-card a {
+            color: yellow;
+            text-decoration: none;
+        }
+
+
+        footer{
+    position: relative;
+    bottom: -200px;
+    background: black;
+    width: 100%;
+    
+    left: 0;
+
+ 
+  }
+  footer::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100px;
+    height: 1px;
+    width: 100%;
+    background: #AFAFB6;
+  }
+  footer .content{
+    max-width: 1250px;
+    margin: auto;
+    padding: 30px 40px 40px 40px;
+  }
+  footer .content .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  .content .top .logo-details{
+    color: #fff;
+    font-size: 30px;
+  }
+  
+  footer .content .link-boxes{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .content .link-boxes .box{
+    width: calc(100% / 5 - 10px);
+  }
+  .content .link-boxes .box .link_name{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+
+  .content .link-boxes .box li a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.4s ease
+  }
+
+
+
+  .link-boxes .box {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+ 
+
+  footer .bottom-details{
+    width: 100%;
+    background: #000000;
+  }
+  footer .bottom-details .bottom_text{
+    max-width: 1250px;
+    margin: auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .bottom-details .bottom_text span,
+  .bottom-details .bottom_text a{
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    opacity: 0.8;
+    text-decoration: none;
+  }
+  .bottom-details .bottom_text a:hover{
+    opacity: 1;
+    text-decoration: underline;
+  }
+  .bottom-details .bottom_text a{
+    margin-right: 10px;
+  }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">OnlineCar</a>
+        <nav class="navigation">
+            <a href="contact.html">Contact</a>
+            <div class="button-container">
+                <button onclick="location.href='login.html'" class="login-button">Login</button>
+                <button onclick="location.href='signup-PA.html'" class="signup-button">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <h1>Our Services</h1>
+    <div class="services-container">
+        <div class="service-card">
+            <div class="icon-container">
+                <i class="fa fa-car"></i>
+            </div>
+            <h3>Car Rentals</h3>
+            <p>We offer a reliable car rental serices for both short and long-term needs. Rent your car today!</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon-container">
+                <i class="fa fa-dollar-sign"></i>
+            </div>
+            <h3>Buy a Car</h3>
+            <p>Browse our selection of cars available for purchase. Find the perfect car for you at great prices.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon-container">
+                <i class="fa fa-hand-holding-usd"></i>
+            </div>
+            <h3>Sell your car</h3>
+            <p>Want to sell your car? We offer a quick and easy process to sell your vehicle. Get a great deal today!</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content">
+          <div class="top">
+            <div class="logo-details">
+             
+            </div>
+           
+          </div>
+          <div class="link-boxes">
+            <ul class="box">
+              <li class="link_name" style="color: yellow;">OnlineCar</li>
+              <li><a href="#">Home</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="signup-PA.html">Get started</a></li>
+            </ul>
+        
+           
+           
+         
+          </div>
+        </div>
+        <div class="bottom-details">
+          <div class="bottom_text">
+            <span class="copyright_text">Copyright © 2024 <a href="#">OnlineCar.</a>All rights reserved</span>
+            <span class="policy_terms">
+              <a href="#">Privacy policy</a>
+              <a href="#">Terms & condition</a>
+            </span>
+          </div>
+        </div>
+      </footer>
+   
+
+
+
+</body>
+
+</html>
+
+      
+   

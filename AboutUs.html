@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AboutUS-Faqe Responsive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/collection/components/icon/icon.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            padding-left: 40px;
+            font-size: 3em;
+            color: white;
+            text-decoration: none;
+            user-select: none;
+            margin-right: auto;
+        }
+
+        #About, #OurMission {
+    font-size: 5em;
+    color: yellow;
+    text-align: center;
+    margin-top: 150px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#About::after, #OurMission::after {
+    content: "";
+    display: block;
+    width: 23%; 
+    height: 5px; 
+    background-color: yellow;
+    margin: 5px auto 0; 
+}
+
+     
+
+
+        .mission-slider {
+            max-width: 1500px;
+            margin: 50px auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 0 20px;
+        }
+
+        .slide p {
+            font-size: 1.4em;
+            line-height: 1.6;
+            color: white;
+            font-weight: 100;
+            text-align: justify;
+            margin: 0 auto;
+            max-width: 95%;
+        }
+
+        .dots {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: #555;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: yellow;
+        }
+
+        @media (max-width: 768px) {
+            .slide p {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/NeFillim/LandingPage.html" class="logo" style="text-decoration: none;">
+            <span style="color: yellow;">OnlineCar</span>
+        </a>
+    </header>
+
+    <div class="mission-slider">
+        <div class="slides">
+            <!-- About Us Slide -->
+            <div class="slide">
+                <h1 id="About">About Us</h1>
+                <p>
+                    OnlineCar is a leader in the automotive industry, offering a diverse range of high-quality vehicles to meet every need. Known for our exceptional customer service, we go beyond expectations to ensure reliability, innovation, and satisfaction. Whether you're looking for a sleek sedan, a versatile SUV, or a robust truck, we provide solutions designed to enhance every step of your journey.
+                </p>
+            </div>
+            <!-- Our Mission Slide -->
+            <div class="slide">
+                <h1 id="OurMission">Our Mission</h1>
+                <p>
+                    To revolutionize the automotive industry by providing innovative solutions and exceptional customer experiences. We aim to empower our customers with reliable, high-quality vehicles and foster sustainability through eco-friendly practices.
+                </p>
+            </div>
+        </div>
+        <div class="dots">
+            <span class="dot active" onclick="showSlide(0)"></span>
+            <span class="dot" onclick="showSlide(1)"></span>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.slides');
+            const dots = document.querySelectorAll('.dot');
+            const totalSlides = document.querySelectorAll('.slide').length;
+
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            slides.style.transform = `translateX(${-currentSlide * 100}%)`;
+
+           
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+      
+        setInterval(nextSlide, 5000); 
+
+        
+        showSlide(0);
+    </script>
+</body>
+</html>
